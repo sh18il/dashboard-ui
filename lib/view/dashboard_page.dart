@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:sidebarx/sidebarx.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final SidebarXController _controller = SidebarXController(selectedIndex: 0);
+    final SidebarXController controller = SidebarXController(selectedIndex: 0);
     Map<String, double> dataMap = {
       "Awaiting Approval": 225,
       "Execution": 150,
@@ -24,11 +25,11 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Projects"),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Row(
-              children: const [
+              children: [
                 CircleAvatar(child: Icon(Icons.person)),
                 Gap(10),
                 Text("Mohammed Ibrahim")
@@ -61,8 +62,8 @@ class DashboardPage extends StatelessWidget {
                         border: Border.all(color: Colors.red),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Icon(Icons.dashboard, color: Colors.red),
                           Gap(5),
                           Text("Dashboard",
@@ -78,8 +79,8 @@ class DashboardPage extends StatelessWidget {
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Icon(Icons.assignment, color: Colors.black),
                           Gap(5),
                           Text("Projects",
@@ -92,7 +93,7 @@ class DashboardPage extends StatelessWidget {
               ),
               const Gap(20),
               Container(
-                decoration: BoxDecoration(color: Colors.white),
+                decoration: const BoxDecoration(color: Colors.white),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -102,14 +103,12 @@ class DashboardPage extends StatelessWidget {
                         padding: const EdgeInsets.all(16),
                         margin: const EdgeInsets.symmetric(horizontal: 4),
                         decoration: BoxDecoration(
+                          border:
+                              Border(right: BorderSide(color: Colors.black)),
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.0),
-                          boxShadow: const [
-                            BoxShadow(blurRadius: 5, color: Colors.black12)
-                          ],
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "ACTIVE JOC PROJECTS",
                               textAlign: TextAlign.center,
@@ -138,14 +137,12 @@ class DashboardPage extends StatelessWidget {
                         padding: const EdgeInsets.all(16),
                         margin: const EdgeInsets.symmetric(horizontal: 4),
                         decoration: BoxDecoration(
+                          border:
+                              Border(right: BorderSide(color: Colors.black)),
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.0),
-                          boxShadow: const [
-                            BoxShadow(blurRadius: 5, color: Colors.black12)
-                          ],
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "ACTIVE CPC PROJECTS",
                               textAlign: TextAlign.center,
@@ -174,14 +171,12 @@ class DashboardPage extends StatelessWidget {
                         padding: const EdgeInsets.all(16),
                         margin: const EdgeInsets.symmetric(horizontal: 4),
                         decoration: BoxDecoration(
+                          border:
+                              Border(right: BorderSide(color: Colors.black)),
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.0),
-                          boxShadow: const [
-                            BoxShadow(blurRadius: 5, color: Colors.black12)
-                          ],
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "COMPLETED PROJECTS",
                               textAlign: TextAlign.center,
@@ -211,14 +206,12 @@ class DashboardPage extends StatelessWidget {
                         padding: const EdgeInsets.all(16),
                         margin: const EdgeInsets.symmetric(horizontal: 4),
                         decoration: BoxDecoration(
+                          border:
+                              Border(right: BorderSide(color: Colors.black)),
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.0),
-                          boxShadow: const [
-                            BoxShadow(blurRadius: 5, color: Colors.black12)
-                          ],
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "PENDING APPROVAL",
                               textAlign: TextAlign.center,
@@ -249,13 +242,9 @@ class DashboardPage extends StatelessWidget {
                         margin: const EdgeInsets.symmetric(horizontal: 4),
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.0),
-                          boxShadow: const [
-                            BoxShadow(blurRadius: 5, color: Colors.black12)
-                          ],
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "TOTAL PROJECTS",
                               textAlign: TextAlign.center,
@@ -290,9 +279,6 @@ class DashboardPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8.0),
-                        boxShadow: const [
-                          BoxShadow(blurRadius: 5, color: Colors.black12)
-                        ],
                       ),
                       child: Column(
                         children: [
@@ -307,43 +293,43 @@ class DashboardPage extends StatelessWidget {
                                 children: [
                                   Row(
                                     children: [
-                                      Text("225"),
-                                      Gap(4),
+                                      const Text("225"),
+                                      const Gap(4),
                                       CircleAvatar(
                                         backgroundColor: colorList[0],
                                         maxRadius: 4,
                                       ),
-                                      Gap(5),
-                                      Text("Awaiting Approval"),
+                                      const Gap(5),
+                                      const Text("Awaiting Approval"),
                                     ],
                                   ),
-                                  Gap(10),
+                                  const Gap(10),
                                   Row(
                                     children: [
-                                      Text("150"),
-                                      Gap(4),
+                                      const Text("150"),
+                                      const Gap(4),
                                       CircleAvatar(
                                         backgroundColor: colorList[1],
                                         maxRadius: 4,
                                       ),
-                                      Gap(5),
-                                      Text("Execution"),
+                                      const Gap(5),
+                                      const Text("Execution"),
                                     ],
                                   ),
-                                  Gap(10),
+                                  const Gap(10),
                                   Row(
                                     children: [
-                                      Text("300"),
-                                      Gap(4),
+                                      const Text("300"),
+                                      const Gap(4),
                                       CircleAvatar(
                                         backgroundColor: colorList[2],
                                         maxRadius: 4,
                                       ),
-                                      Gap(5),
-                                      Text("Completed"),
+                                      const Gap(5),
+                                      const Text("Completed"),
                                     ],
                                   ),
-                                  Gap(10),
+                                  const Gap(10),
                                 ],
                               ),
                               PieChart(
@@ -387,10 +373,69 @@ class DashboardPage extends StatelessWidget {
                       child: Column(
                         children: [
                           const Gap(10),
-                          Container(
-                            height: 150,
-                            child: const Center(child: Text("Line Chart ")),
+                          SizedBox(
+                            height: 185,
+                            child: Center(
+                              child: SfCartesianChart(
+                                primaryXAxis: const CategoryAxis(
+                                  isVisible: false,
+                                ),
+                                primaryYAxis: const NumericAxis(
+                                  isVisible: false,
+                                ),
+                                series: <LineSeries<SalesData, String>>[
+                                  LineSeries<SalesData, String>(
+                                    dataSource: <SalesData>[
+                                      SalesData('Jan', 35),
+                                      SalesData('Feb', 28),
+                                      SalesData('Mar', 34),
+                                      SalesData('Apr', 32),
+                                      SalesData('May', 40),
+                                    ],
+                                    xValueMapper: (SalesData sales, _) =>
+                                        sales.year,
+                                    yValueMapper: (SalesData sales, _) =>
+                                        sales.sales,
+                                    color: Colors.blue,
+                                    width: 2,
+                                  ),
+                                  LineSeries<SalesData, String>(
+                                    dataSource: <SalesData>[
+                                      SalesData('Jan', 20),
+                                      SalesData('Feb', 18),
+                                      SalesData('Mar', 22),
+                                      SalesData('Apr', 25),
+                                      SalesData('May', 30),
+                                    ],
+                                    xValueMapper: (SalesData sales, _) =>
+                                        sales.year,
+                                    yValueMapper: (SalesData sales, _) =>
+                                        sales.sales,
+                                    color: Colors.green,
+                                    width: 2,
+                                  ),
+                                ],
+                                tooltipBehavior: TooltipBehavior(enable: false),
+                              ),
+                            ),
                           ),
+                          const Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.green,
+                                maxRadius: 4,
+                              ),
+                              Gap(5),
+                              Text("Budget"),
+                              Gap(10),
+                              CircleAvatar(
+                                backgroundColor: Colors.blue,
+                                maxRadius: 4,
+                              ),
+                              Gap(5),
+                              Text("Actual Spend"),
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -422,38 +467,38 @@ class DashboardPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text("CLIENT",
+                              Text("CLIENT",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold)),
-                              const Text("CLIENT ID ",
+                              Text("CLIENT ID ",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold)),
-                              const Text("STATUS ",
+                              Text("STATUS ",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold)),
-                              const Text("PLANNING ",
+                              Text("PLANNING ",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold)),
-                              const Text("EXECUTION ",
+                              Text("EXECUTION ",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold)),
-                              const Text("COMPLETED ",
+                              Text("COMPLETED ",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold)),
-                              const Text("PENDING ",
+                              Text("PENDING ",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold)),
-                              const Text("TOTAL ",
+                              Text("TOTAL ",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold)),
@@ -525,12 +570,27 @@ class DashboardPage extends StatelessWidget {
         ),
       ),
       drawer: SidebarX(
-        controller: _controller,
-        items: [
+        theme: const SidebarXTheme(hoverColor: Colors.red),
+        controller: controller,
+        items: const [
           SidebarXItem(icon: Icons.home),
+          SidebarXItem(
+            icon: Icons.dashboard,
+          ),
+          SidebarXItem(icon: Icons.network_cell),
+          SidebarXItem(icon: Icons.person),
+          SidebarXItem(icon: Icons.train_outlined),
+          SidebarXItem(icon: Icons.note_add),
+          SidebarXItem(icon: Icons.anchor),
           SidebarXItem(icon: Icons.settings),
         ],
       ),
     );
   }
+}
+
+class SalesData {
+  SalesData(this.year, this.sales);
+  final String year;
+  final double sales;
 }
